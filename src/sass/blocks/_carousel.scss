@@ -6,7 +6,14 @@
         width: 750px;
         margin: 0 auto;
     }
-    .slick-prev, .slick-next {
+    .tns-outer {
+        position: relative;
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    [data-controls=next], [data-controls=prev] {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -15,7 +22,7 @@
         background: #fff;
 
     }
-    .slick-prev {
+    [data-controls=prev] {
         right: auto;
         left: -65px;
     }
