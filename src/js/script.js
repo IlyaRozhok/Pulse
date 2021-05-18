@@ -9,11 +9,22 @@
   const slider = tns({
     container: '.tiny-slider',
     items: 1,
+    speed: 1000,
     slideBy: 'page',
     autoplay: false,
     nav: false,
-    controlsText: [
+    mouseDrag: true,
+    preventActionWhenRunning: true,
+   /*  controlsText: [
       '<img src="icons/chevron_left.png">',
       '<img src="icons/chevron_right.png">'
-    ]
+    ], */
+    controls: false,
+  });
+
+  document.querySelector('.prev').addEventListener ('click', function () {
+    slider.goTo('prev');
+  });
+  document.querySelector('.next').addEventListener ('click', function () {
+    slider.goTo('next');
   });
