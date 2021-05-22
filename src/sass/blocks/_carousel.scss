@@ -13,16 +13,15 @@
             margin: 0 auto;
         }
     }
-    .prev, .next {
+    [data-controls="prev"], [data-controls="next"]{
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         right: -65px;
         border: none;
         background: #fff;
-
     }
-    .prev {
+    [data-controls="prev"] {
         right: auto;
         left: -65px;
     }

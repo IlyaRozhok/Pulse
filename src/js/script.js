@@ -1,11 +1,5 @@
-/* $(document).ready(function(){
-    $('.carousel__inner').slick({
-        prevArrow: '<button type="button" class="slick-prev"><img src="icons/chevron_left.png"></button>',
-        nextArrow: '<button type="button" class="slick-next"><img src="icons/chevron_right.png"></button>',
-        adaptiveHeight: true,
-        speed: 1200
-      });
-  }); */
+$(document).ready(function(){
+
   const slider = tns({
     container: '.tiny-slider',
     items: 1,
@@ -15,16 +9,26 @@
     nav: false,
     mouseDrag: true,
     preventActionWhenRunning: true,
-   /*  controlsText: [
+    controlsText: [
       '<img src="icons/chevron_left.png">',
       '<img src="icons/chevron_right.png">'
-    ], */
-    controls: false,
+    ],
   });
 
-  document.querySelector('.prev').addEventListener ('click', function () {
+  $(function() {
+  
+    $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+      $(this)
+        .addClass('active').siblings().removeClass('active')
+        .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+    });
+    
+  });
+});
+
+  /* METHOD goTO */
+/*   document.querySelector('.prev').addEventListener ('click', function () {
     slider.goTo('prev');
   });
   document.querySelector('.next').addEventListener ('click', function () {
-    slider.goTo('next');
-  });
+    slider.goTo('next'); */
