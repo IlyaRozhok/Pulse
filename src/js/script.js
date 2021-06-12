@@ -8,11 +8,25 @@ $(document).ready(function(){
     autoplay: false,
     nav: false,
     mouseDrag: true,
-    preventActionWhenRunning: true,
     controlsText: [
       '<img src="icons/chevron_left.png">',
       '<img src="icons/chevron_right.png">'
     ],
+    responsive: {
+      320: {
+        autoplay: true,
+        nav: true,
+        controls: false,
+        items: 1,
+        autoHeight: false,
+      },
+      1200: {
+        items: 1,
+        autoplay: false,
+        nav: false,
+        controls: true,
+      }
+    }
   });
 
   $(function() {
