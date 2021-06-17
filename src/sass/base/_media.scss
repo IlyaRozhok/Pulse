@@ -381,6 +381,23 @@
             text-align: center;
         }
     }
+    .modal {
+        width: 300px;
+        min-height: 330px;
+        padding: 25px 20px 30px 20px;
+        &__subtitle {
+            font-size: 16px;
+        }
+        &__descr {
+            font-size: 12px;
+        }
+    }
+    .consultation__feed_form {
+        width: 240px;
+        input {
+            font-size: 13px;
+        }
+    }
 }
 @media (max-width: 400px) {
     .container {
