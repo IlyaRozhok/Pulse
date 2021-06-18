@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  // Slider config
+
   const slider = tns({
     container: '.tiny-slider',
     items: 1,
@@ -28,6 +30,8 @@ $(document).ready(function(){
       }
     }
   });
+
+  // Tabs
 
   $(function() {
     $('ul.catalog__tabs').on('click', 'li:not(.active)', function() {
@@ -65,6 +69,39 @@ $(document).ready(function(){
         $('.overlay, #order'). fadeIn('slow');
       });
     });
+    
+    // Form validation
+  
+//Сокращения кода с помощью функции (избегаем копипаста)
+    function validateForms(form) {    //создаем функцию, называем, в скобках аргумент - форма - ниже вставляем тело функции
+      $(form).validate({
+        rules: {
+          name: {
+            required: true,
+            minlength: 2
+          },
+          phone: "required",
+          email: {
+            required: true,
+            email: true
+          },
+        },
+        messages: {
+          name: {
+            required: "Пожалуйста, введите свое имя",
+            minlength: jQuery.validator.format("Минимум {0} символа")
+          } ,
+          phone: "Пожалуйста, введите свой номер телефона",
+          email: {
+            required: "Пожалуйста, введите свою почту",
+            email: "Неверный e-mail"
+          }
+        },
+      });
+    }
+    validateForms('#consultation-form');
+    validateForms('#consultation form');
+    validateForms('#order form');
 });
 
   /* METHOD goTO */

@@ -11,6 +11,7 @@
             width: 80%;
             height: 45px;
             font-size: 14px;
+            margin: 0 auto;
         }
     }
     .title {
@@ -270,6 +271,9 @@
             margin-top: 20px;
             input {
                 height: 40px;
+            }
+            label.error {
+                font-size: 10px;
             }
         }
     }

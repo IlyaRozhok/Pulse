@@ -51,6 +51,9 @@
         margin: 0 15px;
         border: 2px solid white;
         border-radius: 100%;
+        &:hover {
+            background-color: #db4b4b;
+        }
         img {
             height: 25px;
         }

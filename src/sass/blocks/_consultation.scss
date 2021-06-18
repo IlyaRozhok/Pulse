@@ -29,5 +29,18 @@
         &_mt25 {
             margin-top: 25px;
         }
+        .error {
+            border: 2px solid red;
+        }
+        label {
+            color: red;
+            font-size: 13px;
+            text-align: center;
+            margin-bottom: 15px;
+            margin-top: -10px;
+        }
+        label.error {
+            border: none;
+        }
     }
 }
