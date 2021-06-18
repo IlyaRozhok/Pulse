@@ -72,8 +72,8 @@ $(document).ready(function(){
     
     // Form validation
   
-
-    function validateForms(form) {    
+//Сокращения кода с помощью функции (избегаем копипаста)
+    function validateForms(form) {    //создаем функцию, называем, в скобках аргумент - форма - ниже вставляем тело функции
       $(form).validate({
         rules: {
           name: {
@@ -102,19 +102,11 @@ $(document).ready(function(){
     validateForms('#consultation-form');
     validateForms('#consultation form');
     validateForms('#order form');
-    $('input[name=phone]').mask("+7(999) 999-9999");
+});
 
-    $('form').submit(function(e) {
-      e.preventDefault();
-      $.ajax({
-        type: "POST",
-        url: "mailer/smart.php",
-        data: $(this).serialize()
-      }).done(function() {
-        $(this).find("input").val("");
-
-        $('form').trigger('reset');
-      });
-      return false;
-    });
+  /* METHOD goTO */
+/*   document.querySelector('.prev').addEventListener ('click', function () {
+    slider.goTo('prev');
   });
+  document.querySelector('.next').addEventListener ('click', function () {
+    slider.goTo('next'); */
