@@ -57,7 +57,7 @@ $(document).ready(function(){
     // Modals
 
     $('[data-modal=consultation]').on('click', function() {
-      $('.overlay, #consultation'). fadeIn('slow');
+      $('.overlay, #consultation').fadeIn('slow');
     });
     $('.modal__cross').on('click', function() {
       $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
@@ -112,6 +112,8 @@ $(document).ready(function(){
         data: $(this).serialize()
       }).done(function() {
         $(this).find("input").val("");
+        $('#consultation, #order').fadeOut();
+        $('#thanks, .overlay').fadeIn('slow');
 
         $('form').trigger('reset');
       });
