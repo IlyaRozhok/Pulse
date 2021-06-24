@@ -20,7 +20,18 @@
         }
     }
     &__item {
+        &:nth-child(2) {
+            img {
+            animation: adv_heartbeat 1.4s infinite ease;
+            }
+        }
+        &:nth-child(odd) {
+            img {
+                animation-duration: 1.5s;
+            }
+        }
         margin-top: 60px;
+      
     }
     &__title {
         font-weight: 700;

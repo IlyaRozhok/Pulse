@@ -57,7 +57,7 @@ $(document).ready(function(){
     // Modals
 
     $('[data-modal=consultation]').on('click', function() {
-      $('.overlay, #consultation'). fadeIn('slow');
+      $('.overlay, #consultation').fadeIn('slow');
     });
     $('.modal__cross').on('click', function() {
       $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
@@ -72,8 +72,8 @@ $(document).ready(function(){
     
     // Form validation
   
-//Сокращения кода с помощью функции (избегаем копипаста)
-    function validateForms(form) {    //создаем функцию, называем, в скобках аргумент - форма - ниже вставляем тело функции
+
+    function validateForms(form) {    
       $(form).validate({
         rules: {
           name: {
@@ -102,11 +102,38 @@ $(document).ready(function(){
     validateForms('#consultation-form');
     validateForms('#consultation form');
     validateForms('#order form');
+    $('input[name=phone]').mask("+7(999) 999-9999");
+
+    $('form').submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: "mailer/smart.php",
+        data: $(this).serialize()
+      }).done(function() {
+        $(this).find("input").val("");
+        $('#consultation, #order').fadeOut();
+        $('#thanks, .overlay').fadeIn('slow');
+
+        $('form').trigger('reset');
+      });
+      return false;
+    });
+
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 1600) {
+        $('.up_btn').fadeIn();
+      } else {
+        $('.up_btn').fadeOut();
+      }
+    });
+
+    $(function(){
+      $("a[href^='#']").click(function(){
+              var _href = $(this).attr("href");
+              $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+              return false;
+      });
 });
 
-  /* METHOD goTO */
-/*   document.querySelector('.prev').addEventListener ('click', function () {
-    slider.goTo('prev');
   });
-  document.querySelector('.next').addEventListener ('click', function () {
-    slider.goTo('next'); */

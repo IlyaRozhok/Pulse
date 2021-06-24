@@ -11,7 +11,7 @@
     <title>Pulse</title>
 </head>
 <body>
-    <section class="promo">
+    <section id="up" class="promo">
         <div class="container">
             <header class="header">
                 <div class="header__logo">
@@ -47,7 +47,7 @@
                     <button data-modal="consultation" class="button button_main">заказать консультацию</button>
                     <div class="promo__link">
                         или
-                        <a href="#">перейти в каталог</a>
+                        <a href="#catalog">перейти в каталог</a>
                     </div>
                 </div>
         </div>
@@ -84,7 +84,7 @@
             </h3>
             <form id="consultation-form" class="consultation__feed_form" action="#">
                 <input name="name" placeholder="Ваше имя" type="text">
-                <input name="phone" placeholder="Ваш телефон" type="number">
+                <input name="phone" placeholder="Ваш телефон">
                 <input name="email" placeholder="Ваш E-mail" type="email">
                 <button class="button button_consultation">заказать консультацию</button>
             </form>
@@ -99,7 +99,7 @@
             </div>
         </div>
     </section>
-    <section class="catalog">
+    <section id="catalog" class="catalog">
         <div class="container">
             <h2 class="title title_catalog">Каталог пульсометров</h2>
             <ul class="catalog__tabs">
@@ -585,7 +585,7 @@
             <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
             <form class="consultation__feed_form consultation__feed_form_mt25" action="#">
                 <input name="name" placeholder="Ваше имя" type="text">
-                <input name="phone" placeholder="Ваш телефон" type="number">
+                <input name="phone" placeholder="Ваш телефон">
                 <input name="email" placeholder="Ваш E-mail" type="email">
                 <button class="button button_consultation">заказать консультацию</button>
             </form>
@@ -596,7 +596,7 @@
             <div class="modal__descr">Пульсометр Polar FT1</div>
             <form class="consultation__feed_form consultation__feed_form_mt25" action="#">
                 <input name="name" placeholder="Ваше имя" type="text">
-                <input name="phone" placeholder="Ваш телефон" type="number">
+                <input name="phone" placeholder="Ваш телефон">
                 <input name="email" placeholder="Ваш E-mail" type="email">
                 <button class="button button_consultation">Купить</button>
             </form>
@@ -607,9 +607,13 @@
             <div class="modal__descr">Наш менеджер свяжется с вами в ближайшее время!</div>
         </div>
     </div>
+    <a href="#up" class="up_btn">
+        <img src="icons/chevron_up.svg" alt="up">
+    </a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/script.js"></script>   
 </body>
 </html>
